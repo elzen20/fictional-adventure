@@ -35,7 +35,7 @@ jobs:
     permissions:
       contents: write
       pages: write
-      id-token: token
+      id-token: write
       
     environment:
       name: production
