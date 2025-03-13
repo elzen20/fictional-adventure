@@ -27,7 +27,7 @@ jobs:
           echo "Texto adicional" >> hello_world.txt
       - name: Subir cambios
         run: |
-          git add ruta/del/archivo.txt
+          git add .
           git commit -m "Agregado texto al archivo"
           git push
       
