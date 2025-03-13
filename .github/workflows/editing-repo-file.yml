@@ -1,0 +1,33 @@
+name: editing-repo-file
+on:
+  workflow_dispatch:
+    inputs:
+      environments:
+        type: choice
+        options:
+          - dev
+          - prod
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  EditFile:
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ inputs.environment }}
+      url: https://github.com
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          path: devops-pipeline
+      - name: Editing a repo file
+        run:  |
+          #!/bin/bash
+          echo "Texto adicional" >> hello_world.txt
+      - name: Subir cambios
+        run: |
+          git add ruta/del/archivo.txt
+          git commit -m "Agregado texto al archivo"
+          git push
+      
