@@ -28,8 +28,6 @@ jobs:
       - name: Subir cambios
         run: |
           cd devops-pipeline
-          git config --global user.name "elzen20"
-          git config --global user.email "ceqc.quintero@gmail.com"
           git add .
           git commit -m "Agregado texto al archivo"
           git push
