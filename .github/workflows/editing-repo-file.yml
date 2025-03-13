@@ -24,12 +24,14 @@ jobs:
       - name: Modificar archivo
         run: |
           cd devops-pipeline
+          echo "Este es el contenido del archivo" > ruta/nuevo_archivo.txt
           echo "Texto adicional" >> hello_world.txt
       - name: Subir cambios
         run: |
           cd devops-pipeline
+          rm hello_world.txt
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "actor+${{ github.actor }}@users.noreply.github.com"
           git add .
-          git commit -m "Agregado texto al archivo"
+          git commit -m "reemplazando archivo texto al archivo"
           git push
