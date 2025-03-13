@@ -21,13 +21,15 @@ jobs:
       - uses: actions/checkout@v3
         with:
           path: devops-pipeline
-      - name: Editing a repo file
-        run:  |
-          #!/bin/bash
+      - name: Modificar archivo
+        run: |
+          cd devops-pipeline
           echo "Texto adicional" >> hello_world.txt
       - name: Subir cambios
         run: |
+          cd devops-pipeline
+          git config --global user.name "TuNombre"
+          git config --global user.email "tuemail@example.com"
           git add .
           git commit -m "Agregado texto al archivo"
           git push
-      
