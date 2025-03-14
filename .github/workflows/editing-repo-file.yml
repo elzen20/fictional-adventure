@@ -28,12 +28,13 @@ jobs:
       - name: Modificar archivo
         run: |
           cd devops-pipeline
-          echo "Este es el contenido del archivo" > nuevo_archivo.txt
-          echo "Texto adicional" >> hello_world.txt
+          echo "" >> nuevo_archivo.txt
+          echo "Nueva línea 1" >> nuevo_archivo.txt
+          echo "Nueva línea 2" >> nuevo_archivo.txt
+          echo "Otra línea más" >> nuevo_archivo.txt
       - name: Subir cambios
         run: |
           cd devops-pipeline
-          rm hello_world.txt
           
           git add .
           git commit -m "reemplazando archivo texto al archivo"
