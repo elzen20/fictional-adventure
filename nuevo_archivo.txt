@@ -1,1 +1,5 @@
 Este es el contenido del archivo
+
+Nueva línea 1
+Nueva línea 2
+Otra línea más
